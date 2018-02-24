@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+{% block content %} 
+{{ block.super}}
+
+<div class="container">
+
+  <!-- Looping through news   -->
+  {% for photo in photos %}
+<div class="row">
+  <div class="col-md-6"s>
+        <div class="card mb-3 mt-3">
+              <img class="card-img-top" src="{{photo.image.url}}" alt="Card image cap">
+              <div class="card-body">
+                    <h5 class="card-title">{{photo.image_name}}</h5>
+                    <p class="card-text">{{photo.description}}</p>
+              </div>
+        </div>
+  </div>
+</div>
+
+  {% empty %}
+  <div class="row">
+    <h2 class="text-center">There No Images...</h2>
+  </div>
+  {% endfor %}
+
+</div>
+
+{% endblock %}
