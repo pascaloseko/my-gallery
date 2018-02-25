@@ -1,14 +1,14 @@
-body {
+/* body {
       margin: 0;
       padding: 0;
       background: #333;
-}
+} */
 
 .c1 {
       max-width: 100%;
       margin: auto;
       border: #fff solid 3px;
-      background: #fff;
+      background: #000;
 }
 
 .imgs img {
@@ -82,3 +82,35 @@ body {
 	-webkit-transform: translateY(40px);
 	transform: translateY(40px);
 }
+
+.imgs .box-content {
+      width: 100%;
+      padding: 0 20px 20px;
+      position: absolute;
+      bottom: -100px;
+      left: 0;
+      opacity: 0;
+      z-index: 1;
+      transform: scale(0);
+      transition: transform 0s ease 0.5s, opacity 0.3s ease 0.1s, top 0.3s ease 0.1s;
+}
+
+.imgs:hover .box-content{
+      opacity: 1;
+      bottom: 0;
+      transform: scale(1);
+      transition: transform 0.3s ease 0.1s, opacity 0.3s ease 0.1s, top 0s ease 0s;
+}
+
+.imgs .more{
+      font-size: 10px;
+      font-weight: bold;
+      margin: 0 0 5px 0;
+  }
+  .imgs .desc{
+      font-size: 20px;
+      color: #fff;
+  }
+  @media only screen and (max-width:990px){
+      .imgs{ margin-bottom: 40px; }
+  }
