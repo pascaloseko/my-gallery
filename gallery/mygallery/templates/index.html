@@ -8,9 +8,12 @@
   <figure>
     <img class="img-fluid" src="{{photo.image.url}}" height="180" width="320">
     <figcaption class="text-center">
-      <p>{{photo.image_name}}</p>
-      <a class="btn btn-warning" href="#">view more</a>
-      <small class="">{{photo.description}}</small>
+      
+      <div class="box-content">
+          <p>{{photo.image_name}}</p>
+        <a class="btn btn-warning more" href="#">view more</a>
+        <p class="desc">{{photo.description}}</p>
+      </div>
     </figcaption>
   </figure>
   {% empty %}
