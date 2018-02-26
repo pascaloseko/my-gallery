@@ -109,7 +109,7 @@
   }
   .imgs .desc{
       font-size: 20px;
-      color: #fff;
+      color: #fff; 
   }
   @media only screen and (max-width:990px){
       .imgs{ margin-bottom: 40px; }
