@@ -23,11 +23,6 @@ class Category(models.Model):
   def save_category(self):
       self.save()
 
-  @classmethod
-  def search_by_category(cls, search_category):
-      category = cls.objects.filter(category__icontains=search_category)
-      return category
-
 
 class Gallery(models.Model):
   image = models.ImageField(upload_to='gallery/', null=True, blank=True)
@@ -49,6 +44,11 @@ class Gallery(models.Model):
 
   def delete_images(self):
       self.remove()
+
+  @classmethod
+  def search_by_category(cls, search_category):
+      category = cls.objects.filter(category__category__icontains=search_category)
+      return category
 
   def update_image(self, id):
       pass
