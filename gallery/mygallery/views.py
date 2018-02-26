@@ -22,12 +22,12 @@ def image(request, image_id):
       return render(request,"image.html", {"image":image})
 
 def search_results(request):
-      if 'category' in request.GET and request.GET("category"):
+      if 'category' in request.GET and request.GET['category']:
             search_category = request.GET.get('category')
-            searched_categories = Category.search_by_category(search_category)
+            searched_categories = Gallery.search_by_category(search_category)
             message = f"{search_category}"
 
-            return render(request, 'search.html', {"message":message, "category":searched_categories})
+            return render(request, 'search.html', {"message":message, "categories":searched_categories})
 
       else:
             message = "You haven't searched for any term"
